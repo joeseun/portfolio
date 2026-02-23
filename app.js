@@ -5,16 +5,15 @@ toggle.addEventListener("click", () => {
     toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 });
 
-// Copy Email Function
+// Copy Email
 function copyEmail() {
     const email = document.getElementById("email").innerText;
     navigator.clipboard.writeText(email);
-    alert("Email copied to clipboard!");
+    alert("Email copied!");
 }
 
-// Reveal Animation on Scroll
+// Reveal Animation
 const reveals = document.querySelectorAll(".reveal");
-
 function revealOnScroll() {
     const windowHeight = window.innerHeight;
     reveals.forEach(el => {
@@ -24,6 +23,23 @@ function revealOnScroll() {
         }
     });
 }
-
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
+
+// Animate Skill Bars
+const progressBars = document.querySelectorAll(".progress");
+function animateSkills() {
+    progressBars.forEach(bar => {
+        const width = bar.getAttribute("data-width");
+        bar.style.width = width;
+    });
+}
+window.addEventListener("load", animateSkills);
+
+// Hamburger Menu
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+
+hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
