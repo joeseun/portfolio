@@ -73,3 +73,11 @@ function copyEmail() {
         alert("Email copied to clipboard!");
     });
 }
+
+#experience .card {
+    margin-bottom: 30px;
+}
+
+#experience .card:last-child {
+    margin-bottom: 0;
+}
