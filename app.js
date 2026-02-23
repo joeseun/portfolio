@@ -1,97 +1,49 @@
-document.getElementById("copy-email").addEventListener("click", () => {
-  navigator.clipboard.writeText(document.getElementById("email").innerText);
-  alert("Copied!");
+// ===== Dark Mode Toggle =====
+const toggle = document.getElementById("theme-toggle");
+toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 });
 
-fetch("https://api.github.com/users/YOUR_GITHUB_USERNAME/repos?sort=updated")
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("github-projects");
-    data.slice(0,6).forEach(repo => {
-      const card = document.createElement("div");
-      card.classList.add("project-card");
-      card.innerHTML = `
-        <h3>${repo.name}</h3>
-        <p>${repo.description || "No description"}</p>
-        <a href="${repo.html_url}" target="_blank">View Repo →</a>
-      `;
-      container.appendChild(card);
+// ===== Mobile Menu =====
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+
+hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+// ===== Smooth Scroll =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href"))
+            .scrollIntoView({ behavior: "smooth" });
     });
-  });<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Joe Ola | DevSecOps Engineer</title>
-<link rel="stylesheet" href="style.css"/>
-</head>
-<body>
+});
 
-<header class="navbar">
-  <div class="container">
-    <h2 class="logo">Joe Ola</h2>
-    <nav id="nav-menu">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+// ===== Fade In Animation =====
+const faders = document.querySelectorAll(".fade-in");
 
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-text">
-      <h1>Hello, I'm Joe.</h1>
-      <p class="hero-sub">DevSecOps Engineer building secure, scalable infrastructure.</p>
-      <a href="#projects" class="btn-primary">View Work</a>
-      <a href="Joe_Ola_Resume.pdf" download class="btn-secondary">Download Resume</a>
-    </div>
-    <div class="hero-image">
-      <img src="profile.jpg" alt="Joe Ola Profile"/>
-    </div>
-  </div>
-</section>
+const appearOptions = {
+    threshold: 0.2
+};
 
-<section id="about" class="section clean-section">
-  <div class="container">
-    <h2>About Me</h2>
-    <p>
-      Experienced DevOps & DevSecOps engineer focused on cloud automation, CI/CD, and infrastructure security.
-      I design resilient systems and efficient workflows that drive engineering velocity with safety in mind.
-    </p>
-  </div>
-</section>
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
 
-<section id="skills" class="section clean-section">
-  <div class="container">
-    <h2>Skills</h2>
-    <div class="skills-list">
-      <span>AWS</span> <span>Kubernetes</span> <span>Terraform</span> <span>CI/CD</span>
-      <span>Monitoring</span> <span>Security Automation</span> <span>IaC</span>
-    </div>
-  </div>
-</section>
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
 
-<section id="projects" class="section clean-section">
-  <div class="container">
-    <h2>Projects</h2>
-    <div id="github-projects" class="projects-grid"></div>
-  </div>
-</section>
-
-<section id="contact" class="section clean-section">
-  <div class="container">
-    <h2>Contact</h2>
-    <p>Email: <span id="email">j.joeseun@gmail.com</span></p>
-    <button id="copy-email" class="btn-primary">Copy Email</button>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Joe Ola</p>
-</footer>
-
-<script src="app.js"></script>
-</body>
-</html>
+// ===== Copy Email =====
+function copyEmail() {
+    const email = document.getElementById("email").innerText;
+    navigator.clipboard.writeText(email);
+    alert("Email copied to clipboard!");
+}
