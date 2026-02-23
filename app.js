@@ -1,45 +1,55 @@
 // Theme Toggle
-const toggle = document.getElementById("theme-toggle");
-toggle.addEventListener("click", () => {
+const toggleBtn = document.getElementById("theme-toggle");
+toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
-    toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 });
 
-// Copy Email
-function copyEmail() {
-    const email = document.getElementById("email").innerText;
-    navigator.clipboard.writeText(email);
-    alert("Email copied!");
-}
-
-// Reveal Animation
-const reveals = document.querySelectorAll(".reveal");
-function revealOnScroll() {
-    const windowHeight = window.innerHeight;
-    reveals.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < windowHeight - 100) {
-            el.classList.add("active");
-        }
-    });
-}
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-
-// Animate Skill Bars
-const progressBars = document.querySelectorAll(".progress");
-function animateSkills() {
-    progressBars.forEach(bar => {
-        const width = bar.getAttribute("data-width");
-        bar.style.width = width;
-    });
-}
-window.addEventListener("load", animateSkills);
-
-// Hamburger Menu
+// Mobile Menu
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("nav-menu");
 
 hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
+});
+
+// Copy Email
+document.getElementById("copy-email").addEventListener("click", () => {
+    const email = document.getElementById("email").innerText;
+    navigator.clipboard.writeText(email);
+    alert("Email copied!");
+});
+
+// Fade-in Animation
+const faders = document.querySelectorAll(".fade-in");
+
+const appearOptions = {
+    threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+
+// Skill Bar Animation
+const bars = document.querySelectorAll(".progress-bar");
+
+const skillsObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.style.width = entry.target.dataset.width;
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+bars.forEach(bar => {
+    skillsObserver.observe(bar);
 });

@@ -3,133 +3,174 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joe Ola | Cloud & DevOps Engineer</title>
+    <title>Joe Ola | DevSecOps Engineer</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Navigation -->
+<!-- ================= NAVBAR ================= -->
 <header class="navbar">
-    <div class="logo">Joe Ola</div>
+    <div class="container nav-container">
+        <h2 class="logo">Joe Ola</h2>
 
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+        <nav id="nav-menu">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="theme-toggle">🌙</button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </div>
-
-    <nav id="nav-menu">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <button id="theme-toggle">🌙</button>
-    </nav>
 </header>
 
-<!-- Hero Section -->
+<!-- ================= HERO ================= -->
 <section class="hero">
-    <div class="hero-content">
-        <img src="https://via.placeholder.com/150" alt="Profile Photo" class="profile-img"/>
+    <div class="container hero-content fade-in">
+        <img src="profile.jpg" alt="Profile Photo" class="profile-img"/>
         <h1>Joe Ola</h1>
-        <h2>Cloud & DevOps Engineer</h2>
-        <p>Building secure, scalable cloud infrastructure with automation and DevSecOps best practices.</p>
-
-        <div class="hero-buttons">
-            <a href="#contact" class="btn">Contact Me</a>
-            <a href="resume.pdf" download class="btn-outline">Download Resume</a>
-        </div>
-    </div>
-</section>
-
-<!-- About -->
-<section id="about" class="section card reveal">
-    <h2>About Me</h2>
-    <p>
-        I design secure, scalable cloud-native infrastructure across AWS and Azure environments.
-        My expertise includes Kubernetes, Terraform, CI/CD automation, and DevSecOps practices
-        focused on reliability, security, and operational excellence.
-    </p>
-</section>
-
-<!-- Skills with Animated Bars -->
-<section id="skills" class="section reveal">
-    <h2>Technical Skills</h2>
-
-    <div class="skill-bar">
-        <p>AWS</p>
-        <div class="bar"><div class="progress" data-width="95%"></div></div>
-    </div>
-
-    <div class="skill-bar">
-        <p>Kubernetes</p>
-        <div class="bar"><div class="progress" data-width="90%"></div></div>
-    </div>
-
-    <div class="skill-bar">
-        <p>Terraform</p>
-        <div class="bar"><div class="progress" data-width="92%"></div></div>
-    </div>
-
-    <div class="skill-bar">
-        <p>CI/CD</p>
-        <div class="bar"><div class="progress" data-width="93%"></div></div>
-    </div>
-
-    <div class="skill-bar">
-        <p>DevSecOps</p>
-        <div class="bar"><div class="progress" data-width="88%"></div></div>
-    </div>
-</section>
-
-<!-- Experience -->
-<section id="experience" class="section reveal">
-    <h2>Experience</h2>
-    <div class="card">
         <h3>Senior DevSecOps Engineer</h3>
-        <p class="company">Cisco | 2023 – Present</p>
-        <p>Architected secure AWS environments and managed Kubernetes platforms serving large scale microservices systems.</p>
-    </div>
-
-    <div class="card">
-        <h3>DevOps Engineer</h3>
-        <p class="company">Dantata LLC | 2020 – 2022</p>
-        <p>Migrated enterprise systems to Azure and automated CI/CD pipelines improving deployment speed and reliability.</p>
+        <p>Designing secure, scalable cloud-native systems with automation & compliance at the core.</p>
+        <a href="Joe_Ola_Resume.pdf" download class="btn-primary">Download Resume</a>
     </div>
 </section>
 
-<!-- Projects -->
-<section id="projects" class="section reveal">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-        <div class="card">
-            <h3>Terraform EKS Module</h3>
-            <p>Secure and reusable infrastructure module for Kubernetes clusters.</p>
-            <a href="#">View on GitHub</a>
-        </div>
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section">
+    <div class="container card fade-in">
+        <h2>Professional Summary</h2>
+        <p>
+            DevOps/DevSecOps Engineer with 5+ years of experience building secure,
+            scalable cloud-native infrastructure across AWS, Azure, and GCP.
+            Expert in CI/CD automation, Kubernetes platforms, infrastructure as code,
+            and security integration (Shift-Left). Passionate about improving reliability,
+            performance, and compliance across engineering teams.
+        </p>
+    </div>
+</section>
 
-        <div class="card">
-            <h3>DevSecOps Pipeline</h3>
-            <p>CI/CD pipeline integrating security scanning and automation.</p>
-            <a href="#">View on GitHub</a>
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="section">
+    <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card fade-in">
+                <h4>AWS & Cloud</h4>
+                <div class="progress">
+                    <div class="progress-bar" data-width="95%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card fade-in">
+                <h4>Kubernetes</h4>
+                <div class="progress">
+                    <div class="progress-bar" data-width="90%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card fade-in">
+                <h4>Terraform</h4>
+                <div class="progress">
+                    <div class="progress-bar" data-width="92%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card fade-in">
+                <h4>CI/CD Automation</h4>
+                <div class="progress">
+                    <div class="progress-bar" data-width="93%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card fade-in">
+                <h4>Security & Compliance</h4>
+                <div class="progress">
+                    <div class="progress-bar" data-width="88%"></div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
-<!-- Contact -->
-<section id="contact" class="section card reveal">
-    <h2>Contact</h2>
-    <p>Email: <span id="email">j.joeseun@gmail.com</span></p>
-    <button onclick="copyEmail()" class="btn-small">Copy Email</button>
-    <p>
-        <a href="#">GitHub</a> |
-        <a href="#">LinkedIn</a>
-    </p>
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience" class="section">
+    <div class="container">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item fade-in">
+                <h3>Senior DevSecOps Engineer – CISCO</h3>
+                <span>2023 – Present | Brazil</span>
+                <p>Architected AWS landing zones, Kubernetes EKS platform for 200+ services,
+                integrated SAST/DAST automation, improved deployment frequency by 40%,
+                and reduced critical vulnerabilities by 70%.</p>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <h3>DevOps Engineer – DANTATA LLC</h3>
+                <span>2020 – 2022 | UAE</span>
+                <p>Migrated on-prem apps to Azure AKS, automated pipelines,
+                reduced infra costs by 25%, achieved 99.95% uptime.</p>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <h3>Associate DevOps Engineer – Innovate Digital</h3>
+                <span>2019 – 2020 | UAE</span>
+                <p>Built AWS infrastructure using CloudFormation/Terraform,
+                managed CI/CD pipelines and Linux automation scripts.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects-grid">
+
+            <div class="card fade-in">
+                <h3>Terraform EKS Modules</h3>
+                <p>Open-source secure Terraform modules for EKS with monitoring integration.</p>
+                <a href="#">View GitHub →</a>
+            </div>
+
+            <div class="card fade-in">
+                <h3>Security CI/CD Demo</h3>
+                <p>GitHub Actions pipeline with Checkov, Snyk, and container scanning.</p>
+                <a href="#">View GitHub →</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section">
+    <div class="container card fade-in">
+        <h2>Contact</h2>
+        <p>Email: <span id="email">j.joeseun@gmail.com</span></p>
+        <button id="copy-email" class="btn-secondary">Copy Email</button>
+        <p>Location: São Paulo, Brazil</p>
+    </div>
 </section>
 
 <footer>
-    <p>© 2026 Joe Ola</p>
+    <p>© 2026 Joe Ola | Built with HTML, CSS & JavaScript</p>
 </footer>
 
 <script src="app.js"></script>
