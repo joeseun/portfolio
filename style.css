@@ -167,6 +167,15 @@ nav a:hover {
     transition: width 1.5s ease;
 }
 
+/* EXPERIENCE */
+.experience-grid {
+    display: grid;
+    gap: 20px;
+}
+
+
+
+
 /* PROJECTS */
 .projects-grid {
     display: grid;
