@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joe Ola | Cloud & DevOps Engineer</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="navbar">
+    <div class="logo">Joe Ola</div>
+
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav id="nav-menu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-toggle">🌙</button>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <img src="https://via.placeholder.com/160" alt="Profile Photo" class="profile-img"/>
+        <h1>Joe Ola</h1>
+        <h2>Cloud & DevOps Engineer</h2>
+        <p>Designing secure, scalable cloud infrastructure powered by automation and DevSecOps best practices.</p>
+
+        <div class="hero-buttons">
+            <a href="#contact" class="btn">Contact Me</a>
+            <a href="resume.pdf" download class="btn-outline">Download Resume</a>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="section card reveal">
+    <h2>About Me</h2>
+    <p>
+        I am a Cloud and DevOps Engineer specializing in AWS, Kubernetes, Infrastructure as Code,
+        and CI/CD automation. My focus is building secure, resilient platforms that enable
+        engineering teams to deploy faster and operate confidently in production environments.
+    </p>
+</section>
+
+<!-- Skills with Progress Bars -->
+<section id="skills" class="section reveal">
+    <h2>Technical Skills</h2>
+
+    <div class="skill-bar">
+        <p>AWS & Cloud Architecture</p>
+        <div class="progress"><div class="progress-fill" data-width="95%"></div></div>
+    </div>
+
+    <div class="skill-bar">
+        <p>Kubernetes & Containers</p>
+        <div class="progress"><div class="progress-fill" data-width="90%"></div></div>
+    </div>
+
+    <div class="skill-bar">
+        <p>Terraform & Infrastructure as Code</p>
+        <div class="progress"><div class="progress-fill" data-width="92%"></div></div>
+    </div>
+
+    <div class="skill-bar">
+        <p>CI/CD Automation</p>
+        <div class="progress"><div class="progress-fill" data-width="88%"></div></div>
+    </div>
+
+    <div class="skill-bar">
+        <p>Monitoring & Observability</p>
+        <div class="progress"><div class="progress-fill" data-width="85%"></div></div>
+    </div>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="section reveal">
+    <h2>Experience</h2>
+
+    <div class="card">
+        <h3>Senior DevSecOps Engineer</h3>
+        <p class="company">Cisco | 2023 – Present</p>
+        <p>Architected secure AWS landing zones, managed Kubernetes platforms, and integrated security automation into CI/CD pipelines.</p>
+    </div>
+
+    <div class="card">
+        <h3>DevOps Engineer</h3>
+        <p class="company">Dantata LLC | 2020 – 2022</p>
+        <p>Migrated enterprise workloads to Azure and automated end to end deployment pipelines.</p>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="section reveal">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+        <div class="card">
+            <h3>Terraform EKS Module</h3>
+            <p>Secure and reusable Terraform modules for EKS provisioning.</p>
+            <a href="#">View Project</a>
+        </div>
+
+        <div class="card">
+            <h3>DevSecOps Pipeline Demo</h3>
+            <p>CI/CD pipeline with automated security scanning and container analysis.</p>
+            <a href="#">View Project</a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section card reveal">
+    <h2>Contact</h2>
+    <p>Email: <span id="email">j.joeseun@gmail.com</span></p>
+    <button onclick="copyEmail()" class="btn-small">Copy Email</button>
+    <p>
+        <a href="#">GitHub</a> |
+        <a href="#">LinkedIn</a>
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Joe Ola</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
