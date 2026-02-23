@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Joe Seun | DevSecOps Engineer</title>
+    <title>Joe Ola | DevSecOps Engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ===== Navigation ===== -->
 <header class="header">
     <div class="container nav">
         <h2 class="logo">Joe Ola</h2>
+
         <nav id="nav-menu">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
@@ -23,6 +27,7 @@
 
         <div class="nav-controls">
             <button id="theme-toggle">🌙</button>
+
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -32,38 +37,45 @@
     </div>
 </header>
 
-<!-- ===== Hero Section ===== -->
+<!-- HERO -->
 <section class="hero">
     <div class="container hero-content">
+
         <div class="hero-text">
-            <h1>JOE SEUN</h1>
-            <h3>DevOps Engineer</h3>
+            <h1>DevSecOps Engineer</h1>
             <p class="tagline">
                 Designing secure, scalable cloud infrastructure and automated CI/CD pipelines.
             </p>
-            <a href="#contact" class="btn-primary">Contact Me</a>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Contact Me</a>
+                <a href="#" class="btn-outline" download>Download Resume</a>
+            </div>
         </div>
+
         <div class="hero-image">
             <div class="image-card">
-            <img src="profile.jpg" alt="Joe Ola">
+                <img src="profile.jpg" alt="Joe Ola">
+            </div>
         </div>
+
     </div>
 </section>
 
-<!-- ===== About ===== -->
+<!-- ABOUT -->
 <section id="about" class="section fade-in">
     <div class="container card">
         <h2>Professional Summary</h2>
         <p>
             DevOps/DevSecOps Engineer with 5+ years of experience designing secure,
             scalable cloud-native infrastructure across AWS, Azure, and GCP.
-            Specialized in Infrastructure as Code, Kubernetes, CI/CD automation,
+            Specialized in Kubernetes, Terraform, CI/CD automation,
             and shift-left security practices that improve reliability and reduce risk.
         </p>
     </div>
 </section>
 
-<!-- ===== Skills ===== -->
+<!-- SKILLS -->
 <section id="skills" class="section fade-in">
     <div class="container">
         <h2>Technical Skills</h2>
@@ -72,73 +84,56 @@
 
             <div class="skill">
                 <span>AWS & Cloud Architecture</span>
-                <div class="progress"><div style="width:90%"></div></div>
+                <div class="progress"><div data-width="90%"></div></div>
             </div>
 
             <div class="skill">
                 <span>Kubernetes (EKS/AKS)</span>
-                <div class="progress"><div style="width:85%"></div></div>
+                <div class="progress"><div data-width="85%"></div></div>
             </div>
 
             <div class="skill">
                 <span>Terraform / IaC</span>
-                <div class="progress"><div style="width:88%"></div></div>
+                <div class="progress"><div data-width="88%"></div></div>
             </div>
 
             <div class="skill">
                 <span>CI/CD & Automation</span>
-                <div class="progress"><div style="width:92%"></div></div>
+                <div class="progress"><div data-width="92%"></div></div>
             </div>
 
             <div class="skill">
                 <span>Security & Compliance</span>
-                <div class="progress"><div style="width:87%"></div></div>
+                <div class="progress"><div data-width="87%"></div></div>
             </div>
 
         </div>
     </div>
 </section>
 
-<!-- ===== Experience ===== -->
+<!-- EXPERIENCE -->
 <section id="experience" class="section fade-in">
     <div class="container">
         <h2>Professional Experience</h2>
 
-        <div class="timeline">
-
-            <div class="card timeline-item">
-                <h3>Senior DevSecOps Engineer – CISCO</h3>
-                <span>2023 – Present | São Paulo, Brazil</span>
-                <p>
-                    Designed secure multi-account AWS landing zones using Terraform
-                    and Control Tower. Managed 200+ microservices on EKS with GitOps
-                    workflows and reduced critical vulnerabilities by 70%.
-                </p>
-            </div>
-
-            <div class="card timeline-item">
-                <h3>DevOps Engineer – DANTATA LLC</h3>
-                <span>2020 – 2022 | Dubai, UAE</span>
-                <p>
-                    Migrated on-prem applications to Azure (AKS), automated CI/CD,
-                    and improved uptime to 99.95% while reducing infrastructure cost by 25%.
-                </p>
-            </div>
-
-            <div class="card timeline-item">
-                <h3>Associate Cloud/DevOps Engineer</h3>
-                <span>2019 – 2020 | Dubai, UAE</span>
-                <p>
-                    Built AWS infrastructure using CloudFormation and Terraform,
-                    automated deployments, and strengthened Linux system operations.
-                </p>
-            </div>
-
+        <div class="card timeline-item">
+            <h3>Senior DevSecOps Engineer – CISCO</h3>
+            <span>2023 – Present | São Paulo, Brazil</span>
+            <p>Designed secure AWS landing zones, managed 200+ microservices on EKS,
+                reduced vulnerabilities by 70%, improved MTTR by 60%.</p>
         </div>
+
+        <div class="card timeline-item">
+            <h3>DevOps Engineer – DANTATA LLC</h3>
+            <span>2020 – 2022 | Dubai, UAE</span>
+            <p>Migrated applications to Azure AKS, reduced infrastructure costs by 25%,
+                maintained 99.95% uptime.</p>
+        </div>
+
     </div>
 </section>
 
-<!-- ===== Projects ===== -->
+<!-- PROJECTS -->
 <section id="projects" class="section fade-in">
     <div class="container">
         <h2>Projects</h2>
@@ -147,19 +142,13 @@
 
             <div class="card project-card">
                 <h3>Secure EKS Terraform Modules</h3>
-                <p>
-                    Open-source Terraform modules provisioning production-ready EKS clusters
-                    with monitoring and logging integration.
-                </p>
+                <p>Production-ready Terraform modules provisioning secure EKS clusters.</p>
                 <a href="#" class="project-link">View on GitHub</a>
             </div>
 
             <div class="card project-card">
                 <h3>DevSecOps Security Pipeline</h3>
-                <p>
-                    GitHub Actions CI/CD pipeline integrating Checkov, Snyk,
-                    and container vulnerability scanning.
-                </p>
+                <p>GitHub Actions pipeline integrating Checkov, Snyk, and Trivy.</p>
                 <a href="#" class="project-link">View on GitHub</a>
             </div>
 
@@ -167,25 +156,19 @@
     </div>
 </section>
 
-<!-- ===== Education ===== -->
-<section class="section fade-in">
-    <div class="container card">
-        <h2>Education & Certifications</h2>
-        <ul class="cert-list">
-            <li>AWS Certified Solutions Architect – Associate</li>
-            <li>Certified Kubernetes Administrator (CKA)</li>
-            <li>HashiCorp Terraform Associate</li>
-            <li>Diploma in Mass Communication – The Polytechnic, Ibadan</li>
-        </ul>
-    </div>
-</section>
-
-<!-- ===== Contact ===== -->
+<!-- CONTACT -->
 <section id="contact" class="section fade-in">
     <div class="container card">
         <h2>Contact</h2>
+
         <p>Email: <span id="email">j.joeseun@gmail.com</span></p>
         <p>Phone: +55 11 97392-6986</p>
+
+        <div class="socials">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+        </div>
+
         <button class="btn-secondary" onclick="copyEmail()">Copy Email</button>
     </div>
 </section>

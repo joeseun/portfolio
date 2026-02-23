@@ -1,4 +1,3 @@
-/* ===== Root Variables ===== */
 :root {
     --bg: #f4f6f9;
     --card-bg: #ffffff;
@@ -15,7 +14,6 @@ body.dark {
     --muted: #94a3b8;
 }
 
-/* ===== Base ===== */
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +21,7 @@ body.dark {
 }
 
 body {
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
@@ -40,11 +38,10 @@ body {
     padding: 80px 0;
 }
 
-h1, h2, h3 {
-    margin-bottom: 15px;
-}
+h1 { font-size: 42px; }
+h2 { margin-bottom: 30px; }
 
-/* ===== Header ===== */
+/* HEADER */
 .header {
     position: fixed;
     width: 100%;
@@ -71,10 +68,15 @@ nav a:hover {
     color: var(--accent);
 }
 
-/* ===== Hero ===== */
+.nav-controls {
+    display: flex;
+    align-items: center;
+}
+
+/* HERO */
 .hero {
-    padding-top: 120px;
-    padding-bottom: 80px;
+    padding-top: 140px;
+    padding-bottom: 100px;
     background: linear-gradient(135deg, #0f4c81, #1e3a8a);
     color: white;
 }
@@ -83,65 +85,68 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 60px;
     flex-wrap: wrap;
 }
 
-.hero-text {
-    max-width: 500px;
-}
-
-.image-card {
-    padding: 15px;
-    background: var(--card-bg);
-    border-radius: 24px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+.hero-buttons {
+    margin-top: 20px;
 }
 
 .hero-image img {
     width: 320px;
-    max-width: 100%;
-    border-radius: 20px; /* Soft rounded corners */
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border-radius: 20px;
     object-fit: cover;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: 0.4s ease;
 }
 
-/* Subtle premium hover effect */
+.image-card {
+    padding: 15px;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
 .hero-image img:hover {
     transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
 }
 
-/* ===== Buttons ===== */
-.btn-primary, .btn-secondary {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-decoration: none;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
+/* BUTTONS */
 .btn-primary {
     background: white;
     color: #0f4c81;
-    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 30px;
+    text-decoration: none;
 }
 
 .btn-secondary {
     background: var(--accent);
     color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
 }
 
-/* ===== Cards ===== */
+/* CARD */
 .card {
     background: var(--card-bg);
     padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
 }
 
-/* ===== Skills ===== */
+/* SKILLS */
 .skills-grid {
     display: grid;
     gap: 20px;
@@ -157,34 +162,40 @@ nav a:hover {
 
 .progress div {
     height: 100%;
+    width: 0;
     background: var(--accent);
+    transition: width 1.5s ease;
 }
 
-/* ===== Projects ===== */
+/* PROJECTS */
 .projects-grid {
     display: grid;
     gap: 20px;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     transition: 0.3s ease;
 }
 
-/* ===== Timeline ===== */
-.timeline-item {
-    margin-bottom: 20px;
+/* ANIMATIONS */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
 }
 
-/* ===== Footer ===== */
-footer {
-    text-align: center;
-    padding: 30px 0;
-    color: var(--muted);
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
+/* MOBILE */
+.hamburger {
+    display: none;
+}
+
+@media(max-width:768px){
     .hero-content {
         flex-direction: column;
         text-align: center;
@@ -201,13 +212,12 @@ footer {
         border-radius: 10px;
     }
 
-    nav.active {
-        display: flex;
-    }
+    nav.active { display: flex; }
 
     .hamburger {
         display: block;
         cursor: pointer;
+        margin-left: 15px;
     }
 
     .hamburger span {
@@ -217,15 +227,4 @@ footer {
         background: var(--text);
         margin: 5px 0;
     }
-}
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-}
-
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
 }
