@@ -1,12 +1,21 @@
-// THEME TOGGLE
+/* ===============================
+   DARK MODE TOGGLE
+================================= */
 const toggle = document.getElementById("theme-toggle");
+
 toggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
-    toggle.textContent =
-        document.body.classList.contains("dark") ? "☀️" : "🌙";
+
+    if (document.body.classList.contains("dark")) {
+        toggle.textContent = "☀️";
+    } else {
+        toggle.textContent = "🌙";
+    }
 });
 
-// MOBILE MENU
+/* ===============================
+   MOBILE MENU TOGGLE
+================================= */
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("nav-menu");
 
@@ -14,19 +23,19 @@ hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
 });
 
-// SMOOTH SCROLL
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href"))
-            .scrollIntoView({ behavior: "smooth" });
+/* Close mobile menu when clicking link */
+document.querySelectorAll("#nav-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
     });
 });
 
-// FADE-IN ANIMATION
+/* ===============================
+   FADE-IN ON SCROLL
+================================= */
 const faders = document.querySelectorAll(".fade-in");
 
-const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+const fadeObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add("show");
@@ -34,29 +43,33 @@ const appearOnScroll = new IntersectionObserver(function(entries, observer) {
     });
 }, { threshold: 0.2 });
 
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
+faders.forEach(fader => fadeObserver.observe(fader));
 
-// ANIMATED SKILL BARS
-const skills = document.querySelectorAll(".progress div");
+/* ===============================
+   ANIMATE SKILL BARS
+================================= */
+const skillBars = document.querySelectorAll(".progress div");
 
-const skillObserver = new IntersectionObserver(entries => {
+const skillObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.width =
-                entry.target.getAttribute("data-width");
-        }
+        if (!entry.isIntersecting) return;
+
+        const width = entry.target.getAttribute("data-width");
+        entry.target.style.width = width;
+
+        observer.unobserve(entry.target);
     });
 }, { threshold: 0.5 });
 
-skills.forEach(skill => {
-    skillObserver.observe(skill);
-});
+skillBars.forEach(bar => skillObserver.observe(bar));
 
-// COPY EMAIL
+/* ===============================
+   COPY EMAIL FUNCTION
+================================= */
 function copyEmail() {
     const email = document.getElementById("email").innerText;
-    navigator.clipboard.writeText(email);
-    alert("Email copied to clipboard!");
+
+    navigator.clipboard.writeText(email).then(() => {
+        alert("Email copied to clipboard!");
+    });
 }
