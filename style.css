@@ -101,9 +101,9 @@ nav a:hover {
 }
 
 .image-card {
-    padding: 15px;
+    padding: 14px;
     background: white;
-    border-radius: 24px;
+    border-radius: 14px;
     box-shadow: 0 30px 60px rgba(0,0,0,0.2);
 }
 
