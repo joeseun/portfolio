@@ -167,6 +167,20 @@ nav a:hover {
     transition: width 1.5s ease;
 }
 
+
+/* EXPERIENCE */
+.timeline {
+    display: grid;
+    gap: 20px;
+}
+
+.timeline-item:hover {
+    transform: translateY(-6px);
+    transition: 0.3s ease;
+}
+
+
+
 /* PROJECTS */
 .projects-grid {
     display: grid;
